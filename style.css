@@ -1,0 +1,212 @@
+:root {
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+  --bg-color: #242424;
+  --card-bg: #3a3a3a;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --success-color: #4caf50;
+  --error-color: #f44336;
+  --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+#app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#score-board {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+#character-display {
+  margin-bottom: 2rem;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#character-display img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+#input-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#guess-input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: 2px solid #555;
+  background-color: #2a2a2a;
+  color: white;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#guess-input:focus {
+  border-color: var(--primary-color);
+}
+
+#autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  /* Match width of container, but button is there too. */
+  right: auto;
+  width: calc(100% - 100px);
+  /* Approximate width minus button */
+  background-color: var(--card-bg);
+  border: 1px solid #555;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+#autocomplete-list li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #444;
+}
+
+#autocomplete-list li:last-child {
+  border-bottom: none;
+}
+
+#autocomplete-list li:hover {
+  background-color: var(--primary-color);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: white;
+}
+
+button:hover {
+  border-color: var(--primary-hover);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+#submit-btn {
+  background-color: var(--primary-color);
+}
+
+#submit-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+#feedback {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  min-height: 2rem;
+}
+
+.correct {
+  color: var(--success-color);
+}
+
+.wrong {
+  color: var(--error-color);
+}
+
+#next-btn,
+#restart-btn {
+  background-color: var(--primary-color);
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+}
+
+#next-btn:hover,
+#restart-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.hidden {
+  display: none !important;
+}
+
+#game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--card-bg);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  width: 80%;
+  max-width: 500px;
+}

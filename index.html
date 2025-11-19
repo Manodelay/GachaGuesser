@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gacha Character Guesser</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <h1>Gacha Guesser</h1>
+      <div id="score-board">
+        <span id="score">Score: 0</span>
+        <span id="round">Round: 1/10</span>
+      </div>
+    </header>
+
+    <main id="game-container">
+      <div id="character-display">
+        <div class="image-placeholder">Loading...</div>
+        <!-- Image will be injected here -->
+      </div>
+
+      <div id="input-container">
+        <input type="text" id="guess-input" placeholder="Type character name..." autocomplete="off" />
+        <ul id="autocomplete-list" class="hidden"></ul>
+        <button id="submit-btn">Submit</button>
+      </div>
+
+      <div id="feedback" class="hidden"></div>
+
+      <button id="next-btn" class="hidden">Next Round</button>
+    </main>
+
+    <div id="game-over" class="hidden">
+      <h2>Game Over!</h2>
+      <p>Final Score: <span id="final-score">0</span>/10</p>
+      <button id="restart-btn">Play Again</button>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
